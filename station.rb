@@ -16,10 +16,13 @@ class Station
     trains.delete(train)
   end
 
-  def trains_by_type
-    types = {}
-    trains.select { |train| types[trains.count].nil? ? types[trains.count] = 1 : types[train.count] += 1 }
-    types
-  end
+  def trains_by_type(type)
+    trains.select { |train| train.type == type }.count
+  end  def initialize(number, type = :freight, wagons = 0)
+      @number = number
+      @type = type
+      @wagons = wagons
+      @speed = 0
+    end
 
 end

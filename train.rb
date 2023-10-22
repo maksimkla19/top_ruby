@@ -8,9 +8,12 @@ class Train
     @type = type
     @wagons = wagons
     @speed = 0
-    @route =
-    @station_index =
-  end
+  end  def initialize(number, type = :freight, wagons = 0)
+      @number = number
+      @type = type
+      @wagons = wagons
+      @speed = 0
+    end
 
   def set_route(route)
     @route = route
